@@ -1,0 +1,36 @@
+Q1-- solution
+#traversing through all arguments using  for loop
+
+i="$@"
+check(){
+count=0
+for i in "$i"
+do
+count=`expr $count + 1`
+        if [ -d $i ]
+        then
+                echo "The provided argument $i is the directory."
+        elif [ -f $i ]
+        then
+                echo "The provided argument $i is the file."
+        else
+                echo "The given argument does not exist on the file system."
+        fi
+done
+count_arg $count
+}
+
+count_arg(){
+a=$1
+  echo $a
+}
+
+check
+
+----------------------------------------------------------------------------------------------------------
+Q2 -- solution
+Command
+---------
+find / -name "myfile.txt"
+
+----------------------------------------------------------------------------------------------------------
